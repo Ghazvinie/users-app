@@ -10,7 +10,8 @@ export default function SingleUser({ usersData }) {
     const { goBack } = useHistory()
 
     return (
-        <div>
+        <div className='single-page'>
+            <div>Back</div>
             {
                 singleUser ? <UserDetail user={singleUser} /> : goBack()
             }

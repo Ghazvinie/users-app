@@ -1,10 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
+import {Context } from '../App';
 import '../styles/allusers.css'
 
-export default function AllUsers({ usersData }) {
 
-    const users = usersData.map((user, idx) => (
+export default function AllUsers() {
+
+    const usersData = useContext(Context);
+
+    const users = usersData?.map((user, idx) => (
         <div className='user-info-container' >
             <div className='img-container'>
                 <Link to={`/user/${user.login.username}`} key={idx} style={{ textDecoration: 'none' }}>

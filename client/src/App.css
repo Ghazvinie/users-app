@@ -3,3 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.single-page {
+  margin-top: 2rem;
+}

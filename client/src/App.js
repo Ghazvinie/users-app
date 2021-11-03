@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createContext } from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
 
 import AllUsers from './components/AllUsers';
 import SingleUserPage from './components/SingleUserPage';
 import SearchBar from './components/SearchBar';
 import './App.css';
+
+export const Context = createContext({});
 
 function App() {
   const [usersData, setUsersData] = useState([]);
@@ -18,20 +20,22 @@ function App() {
     getData();
   }, []);
 
-  console.log('refreshed')
+
 
   return (
-    <div className='app'>
-      <SearchBar usersData={usersData}/>
-      <Switch>
-        <Route exact path='/'>
-          <AllUsers usersData={usersData}/>
-        </Route>
-        <Route exact path='/user/:id'>
-          <SingleUserPage usersData={usersData}/>
-        </Route>
-      </Switch>
-    </div>
+    <Context.Provider value={usersData}>
+      <div className='app'>
+        <SearchBar usersData={usersData} />
+        <Switch>
+          <Route exact path='/'>
+            <AllUsers usersData={usersData} />
+          </Route>
+          <Route exact path='/user/:id'>
+            <SingleUserPage usersData={usersData} />
+          </Route>
+        </Switch>
+      </div>
+    </Context.Provider>
   );
 }
 
