@@ -29,7 +29,7 @@ function App() {
             <AllUsers />
           </Route>
           <Route exact path='/user/:id'>
-            <SingleUserPage  />
+            <SingleUserPage />
           </Route>
         </Switch>
       </div>

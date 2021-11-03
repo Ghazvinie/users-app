@@ -12,7 +12,7 @@ export default function AllUsers() {
         <div className='user-info-container' key={idx}>
             <div className='img-container'>
                 <Link to={`/user/${user.login.username}`} >
-                    <img src={user.picture.thumbnail} alt={`${user.name.first} ${user.name.last}`}/>
+                    <img src={user.picture.thumbnail} alt={`${user.name.first} ${user.name.last}`} />
                 </Link>
             </div>
             <div className='user-text'>
@@ -23,11 +23,9 @@ export default function AllUsers() {
         </div>
     ));
 
-
     return (
         <div className='users-container'>
             {users}
         </div>
     );
 }
-
