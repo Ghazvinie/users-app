@@ -21,6 +21,7 @@
 	- Display users side by side, rather than one long list
 	- When in single user page, allow for navigation to next and previous user in list
 * Deployment
+	- Current temporary deployment does not work with broken links / unknown users, correct this
 	- Create a backend server to serve the front-end
 	- Dockerise to allow for safer use on different machines and more stable deployment
 
@@ -38,3 +39,4 @@ $ yarn start
 The app will then be available at: ```http://localhost:3000```
 
 #### Remote:
+Temporary deployment: ```https://friendly-jang-39a5b5.netlify.app```
