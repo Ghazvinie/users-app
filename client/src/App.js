@@ -1,5 +1,5 @@
-import React, { useEffect, useState, createContext, useContext } from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
+import React, { useEffect, useState, createContext } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 import AllUsers from './components/AllUsers';
 import SingleUserPage from './components/SingleUserPage';
@@ -11,7 +11,6 @@ export const Context = createContext({});
 function App() {
   const [usersData, setUsersData] = useState(null);
 
-
   useEffect(() => { // Fetch array of users
     const getData = async () => {
       const res = await fetch('https://randomuser.me/api/?results=20');
@@ -20,8 +19,6 @@ function App() {
     };
     !usersData && getData(); // Only get data if the users array is empty
   }, [usersData]);
-
-
 
   return (
     <Context.Provider value={usersData}>

@@ -17,5 +17,5 @@ export default function UserDetail({ user }) {
             </div>
 
         </div>
-    )
+    );
 }

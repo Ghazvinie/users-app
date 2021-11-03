@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useParams, Redirect, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { Context } from '../App';
 
 import UserDetail from "./UserDetail";
@@ -10,11 +10,10 @@ export default function SingleUser() {
     const { id } = useParams();
     const { goBack } = useHistory();
 
-    if (usersData == null) return <UserNotFound />
+    if (usersData == null) return <UserNotFound /> // No user data
 
     const singleUser = usersData.find(user => user.login.username === id)
-    if (singleUser == null ) return <UserNotFound />
-
+    if (singleUser == null ) return <UserNotFound /> // No single user found
 
     return (
         <div className='single-page'>

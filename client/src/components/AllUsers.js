@@ -1,18 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from '../App';
+
 import '../styles/allusers.css'
 
-
 export default function AllUsers() {
-    const usersData = useContext(Context);
+    const usersData = useContext(Context)
 
     // Map users and create list
     const users = usersData?.map((user, idx) => (
         <div className='user-info-container' key={idx}>
             <div className='img-container'>
-                <Link to={`/user/${user.login.username}`}>
-                    <img src={user.picture.thumbnail} alt={`${user.name.first} ${user.name.last}`} />
+                <Link to={`/user/${user.login.username}`} >
+                    <img src={user.picture.thumbnail} alt={`${user.name.first} ${user.name.last}`}/>
                 </Link>
             </div>
             <div className='user-text'>
