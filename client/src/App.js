@@ -28,7 +28,7 @@ function App() {
           <AllUsers usersData={usersData}/>
         </Route>
         <Route exact path='/user/:id'>
-          <SingleUser />
+          <SingleUser usersData={usersData}/>
         </Route>
       </Switch>
     </div>

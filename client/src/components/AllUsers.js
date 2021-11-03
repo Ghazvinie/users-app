@@ -1,26 +1,28 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 export default function AllUsers({ usersData }) {
 
-    console.log(usersData)
+    const users = usersData.map(user => (
+        <Link to={`/user/${user.login.username}`}>
+            <div className='user' key={user.id.value}>
 
-    const usersTable = usersData.map(user => (
-        <div className='user' key={user.id.value}>
-
-                <img src={user.picture.thumbnail} alt={`${user.name.first} ${user.name.last}`}/>
+                <img src={user.picture.thumbnail} alt={`${user.name.first} ${user.name.last}`} />
 
                 <p>{user.name.title}. {`${user.name.first} ${user.name.last}`}</p>
-
 
                 <p>{user.login.username}</p>
 
                 <p>{user.email}</p>
 
-        </div>
+            </div>
+        </Link>
     ))
 
 
     return (
         <div>
-            {usersTable}
+            {users}
         </div>
     );
 
