@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext } from 'react';
+import React, { useEffect, useState, createContext, useContext } from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
 
 import AllUsers from './components/AllUsers';
@@ -9,7 +9,8 @@ import './App.css';
 export const Context = createContext({});
 
 function App() {
-  const [usersData, setUsersData] = useState([]);
+  const [usersData, setUsersData] = useState(null);
+
 
   useEffect(() => { // Fetch array of users
     const getData = async () => {
@@ -17,8 +18,8 @@ function App() {
       const { results } = await res.json();
       setUsersData(results)
     };
-    getData();
-  }, []);
+    !usersData && getData(); // Only get data if the users array is empty
+  }, [usersData]);
 
 
 

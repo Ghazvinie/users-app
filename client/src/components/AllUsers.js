@@ -5,12 +5,13 @@ import '../styles/allusers.css'
 
 
 export default function AllUsers() {
-
     const usersData = useContext(Context);
+
+    // Map users and create list
     const users = usersData?.map((user, idx) => (
-        <div className='user-info-container' >
+        <div className='user-info-container' key={idx}>
             <div className='img-container'>
-                <Link to={`/user/${user.login.username}`} key={idx} style={{ textDecoration: 'none' }}>
+                <Link to={`/user/${user.login.username}`}>
                     <img src={user.picture.thumbnail} alt={`${user.name.first} ${user.name.last}`} />
                 </Link>
             </div>
@@ -20,7 +21,7 @@ export default function AllUsers() {
                 <p>{user.email}</p>
             </div>
         </div>
-    ))
+    ));
 
 
     return (
@@ -28,6 +29,5 @@ export default function AllUsers() {
             {users}
         </div>
     );
-
 }
 

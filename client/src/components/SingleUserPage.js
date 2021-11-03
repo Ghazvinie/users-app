@@ -7,18 +7,19 @@ import UserNotFound from "./UserNotFound";
 
 export default function SingleUser() {
     const usersData = useContext(Context);
-
     const { id } = useParams();
-    const singleUser = usersData.find(user => user.login.username === id)
+    const { goBack } = useHistory();
 
-    const { goBack } = useHistory()
+    if (usersData == null) return <UserNotFound />
+
+    const singleUser = usersData.find(user => user.login.username === id)
+    if (singleUser == null ) return <UserNotFound />
+
 
     return (
         <div className='single-page'>
-            <div>Back</div>
-            {
-                singleUser ? <UserDetail user={singleUser} /> : <UserNotFound />
-            }
+            <div onClick={() => goBack()}>Back</div>
+            <UserDetail user={singleUser} />
         </div>
     )
 }
