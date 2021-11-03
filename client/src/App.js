@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
 
 import AllUsers from './components/AllUsers';
-import SingleUser from './components/SingleUser';
+import SingleUserPage from './components/SingleUserPage';
 import SearchBar from './components/SearchBar';
 import './App.css';
 
 function App() {
   const [usersData, setUsersData] = useState([]);
-
 
   useEffect(() => { // Fetch array of users
     const getData = async () => {
@@ -19,6 +18,7 @@ function App() {
     getData();
   }, []);
 
+  console.log('refreshed')
 
   return (
     <div className='app'>
@@ -28,7 +28,7 @@ function App() {
           <AllUsers usersData={usersData}/>
         </Route>
         <Route exact path='/user/:id'>
-          <SingleUser usersData={usersData}/>
+          <SingleUserPage usersData={usersData}/>
         </Route>
       </Switch>
     </div>
