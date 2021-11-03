@@ -25,13 +25,13 @@ function App() {
   return (
     <Context.Provider value={usersData}>
       <div className='app'>
-        <SearchBar usersData={usersData} />
+        <SearchBar />
         <Switch>
           <Route exact path='/'>
-            <AllUsers usersData={usersData} />
+            <AllUsers />
           </Route>
           <Route exact path='/user/:id'>
-            <SingleUserPage usersData={usersData} />
+            <SingleUserPage  />
           </Route>
         </Switch>
       </div>
