@@ -20,6 +20,9 @@
 	- Make selecting of user to see details clearer
 	- Display users side by side, rather than one long list
 	- When in single user page, allow for navigation to next and previous user in list
+* Deployment
+	- Create a backend server to serve the front-end
+	- Dockerise to allow for safer use on different machines and more stable deployment
 
 
 #### Deployment 
