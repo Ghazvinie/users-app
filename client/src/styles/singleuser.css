@@ -1,0 +1,19 @@
+.single-container {
+    display: flex;
+    margin-top: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 16rem;
+}
+
+.user-details {
+    align-self: center;
+    text-align: center;
+}
+
+.title {
+    font-size: x-large;
+}
+p {
+    font-size: large;
+}
