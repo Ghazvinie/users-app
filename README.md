@@ -35,7 +35,7 @@ Clone this repository, then:
 ```
 $ cd client
 
-$ npm install
+$ yarn install
 
 $ yarn start
 ```
