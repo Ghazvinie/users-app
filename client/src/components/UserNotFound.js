@@ -7,5 +7,5 @@ export default function UserNotFound(){
             Return 
             </Link>
         </>
-    )
+    );
 }

@@ -9,13 +9,15 @@
 * If no user is found or when navigating to an incorrect user some basic error handling occurs
 
 
-#### To Do:
+#### To Do / Improvements:
 * Better error handling
 	- Render a proper error page
 	- If a user list has already been loaded into state, then maintain this list
 	- Suggest a user who closely matches the user not found
 * Search bar
 	- Allow for searching of users by various fields, ideally all
+* Increase modularity of code
+	- Separate api call / context provider from App to a higher level (perhaps fetch data from backend)
 * Implement clearer UI
 	- Make selecting of user to see details clearer
 	- Display users side by side, rather than one long list
@@ -31,12 +33,18 @@
 Clone this repository, then:
 
 ```
+$ cd client
+
 $ npm install
 
 $ yarn start
 ```
 
-The app will then be available at: ```http://localhost:3000```
+The app will then be available at: 
+
+```http://localhost:3000```
 
 #### Remote:
-Temporary deployment: ```https://friendly-jang-39a5b5.netlify.app```
+Temporary deployment (as above, error handling not functional): 
+
+```https://friendly-jang-39a5b5.netlify.app```
