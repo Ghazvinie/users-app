@@ -48,3 +48,6 @@ The app will then be available at:
 Temporary deployment (as above, error handling not functional): 
 
 ```https://friendly-jang-39a5b5.netlify.app```
+
+#### Technologies:
+* React / HTML / CSS
